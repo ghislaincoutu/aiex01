@@ -48,3 +48,4 @@ tensorboard_function()
 
 # À la fin du script, exécuter la commande suivante :
 # tensorboard --logdir=logs/fit
+

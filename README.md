@@ -1,6 +1,9 @@
 # aiex01
 aiex01 — Expérimentations d’applications d’intelligence artificielle
 
+## Dépôt Git
+https://github.com/ghislaincoutu/aiex01
+
 ## Installation de TensorFlow
 Procédure d’installation de l’application, selon la documentation officielle de TensorFlow.
 

@@ -38,3 +38,4 @@ for i in range(25):
   plt.imshow(train_images[i], cmap=plt.cm.binary)
   plt.xlabel(class_names[train_labels[i]])
 plt.show()
+
