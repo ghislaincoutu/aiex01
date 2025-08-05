@@ -7,12 +7,12 @@ print("Configuration de TensorFlow"); input(pause89)
 import tensorflow as tf;
 print(f"TensorFlow version: {tf.__version__}")
 
-print("Chargement d'un jeu de données MNIST"); input(pause89)
+print("Chargement d’un jeu de données MNIST"); input(pause89)
 mnist = tf.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
-print("Création d'un modèle d'apprentissage automatique"); input(pause89)
+print("Création d’un modèle d’apprentissage automatique"); input(pause89)
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),
   tf.keras.layers.Dense(128, activation='relu'),
@@ -35,7 +35,7 @@ probability_model = tf.keras.Sequential([
 ])
 probability_model(x_test[:5])
 
-# Test d'utilisation du module TensorBoard
+# Test d’utilisation du module TensorBoard
 def tensorboard_function():
   print("Définition du répertoire où les journaux de TensorBoard seront enregistrés"); input(pause89)
   log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")

@@ -19,7 +19,8 @@ sudo apt-get install python3-tk
 ### Création d’un environnement virtuel Python3
 ```sh
 cd /var
-mkdir aiex01
+sudo mkdir aiex01
+sudo chown $USER:$USER aiex01
 cd /var/aiex01
 python3 -m venv ai01
 source /var/aiex01/ai01/bin/activate
