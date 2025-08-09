@@ -33,6 +33,7 @@ source /var/aiex01/ai01/bin/activate
 pip install --upgrade pip
 pip install tensorflow
 pip install matplotlib
+pip install tensorflow-hub
 ```
 
 ### Vérification de l’installation
