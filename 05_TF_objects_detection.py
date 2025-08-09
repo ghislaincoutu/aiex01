@@ -1,3 +1,11 @@
+# TensorFlow -- Détection d'objets à partir d'une image
+
+# Références :
+# Tensorflow -- Object Detection
+# https://www.tensorflow.org/hub/tutorials/object_detection
+# Open Images Dataset V7 and Extensions
+# https://storage.googleapis.com/openimages/web/index.html
+
 import os
 
 os.system("clear")
@@ -9,35 +17,28 @@ def pause():
 
 print("TensorFlow -- Détection d'objets à partir d'une image")
 pause()
-print("Importation des dépendances")
+
+print("\nImportation des modules")
 pause()
-# For running inference on the TF-Hub module.
+
 import tensorflow as tf
 import tensorflow_hub as hub
-
-# For downloading the image.
 import matplotlib.pyplot as plt
 import tempfile
+import time
+import numpy as np
 from six.moves.urllib.request import urlopen
 from six import BytesIO
-
-# For drawing onto the image.
-import numpy as np
 from PIL import Image
 from PIL import ImageColor
 from PIL import ImageDraw
 from PIL import ImageFont
 from PIL import ImageOps
 
-# For measuring the inference time.
-import time
-
-print(tf.__version__)
-
-# Check available GPU devices.
+print(f"TensorFlow version: {tf.__version__}")
 print("The following GPU devices are available: %s" % tf.test.gpu_device_name())
 
-print("Définition des fonctions pour importer et traiter les images")
+print("\nDéfinition des fonctions pour importer et traiter les images")
 pause()
 
 
@@ -45,6 +46,7 @@ def display_image(image):
     fig = plt.figure(figsize=(20, 15))
     plt.grid(False)
     plt.imshow(image)
+    plt.show()
 
 
 def download_and_resize_image(url, new_width=256, new_height=256, display=False):
@@ -111,7 +113,7 @@ def draw_bounding_box_on_image(
 
 
 def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
-    """Overlay labeled boxes on an image with formatted scores and label names."""
+    # Overlay labeled boxes on an image with formatted scores and label names.
     colors = list(ImageColor.colormap.values())
     try:
         font = ImageFont.truetype(
@@ -142,12 +144,30 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
     return image
 
 
-print("Téléchargemet de l'image à traiter")
+print("\nTéléchargemet de l'image à traiter")
 pause()
-image_url = "https://farm6.staticflickr.com/5314/5887463535_a88f862a81_o.jpg"
-downloaded_image_path = download_and_resize_image(image_url, 1280, 856, True)
 
-print("Activation des modules de détection d'objets")
+
+def download_image(image33):
+    match image33:
+        case "01":
+            select = "https://farm6.staticflickr.com/5314/5887463535_a88f862a81_o.jpg"
+            return select
+        case "02":
+            select = "https://farm6.staticflickr.com/3694/19007218479_03f8493049_o.jpg"
+            return select
+        case "03":
+            select = "http://localhost/dev01/medias/image001.jpg"
+            return select
+        case _:
+            print(f"Sélection incorrecte: {image33}")
+
+
+image_url = download_image("01")
+downloaded_image_path = download_and_resize_image(image_url, 1280, 800, True)
+
+
+print("\nActivation des modules de détection d'objets")
 pause()
 
 module_handle = (
@@ -180,6 +200,6 @@ def run_detector(detector, path):
     display_image(image_with_boxes)
 
 
-print("Exécution de la détection d'objets")
+print("\nExécution de la détection d'objets")
 pause()
 run_detector(detector, downloaded_image_path)

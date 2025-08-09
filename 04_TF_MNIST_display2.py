@@ -1,3 +1,5 @@
+# TensorFlow -- Traitement d'un jeu de données Fashion MNIST
+
 import os
 
 os.system("clear")
@@ -9,7 +11,8 @@ def pause():
 
 print("TensorFlow -- Traitement d'un jeu de données Fashion MNIST")
 pause()
-print("Configuration de TensorFlow")
+
+print("Importation des modules")
 pause()
 
 import tensorflow as tf
