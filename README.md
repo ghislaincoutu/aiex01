@@ -32,12 +32,13 @@ Saisir la commande `deactivate` pour sortir de l’environnement virtuel Python3
 source /var/aiex01/ai01/bin/activate
 pip install --upgrade pip
 pip install tensorflow
-pip install matplotlib
 pip install tensorflow-hub
+pip install matplotlib
 ```
 
 ### Vérification de l’installation
 ```sh
+python3 -c "import tensorflow as tf; print(f'TensorFlow version: {tf.__version__}')"
 python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 ```
 
