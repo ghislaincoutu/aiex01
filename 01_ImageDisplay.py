@@ -1,4 +1,15 @@
-# TensorFlow -- Affichage d'une image
+import os
+
+os.system("clear")
+
+
+def pause():
+    programPause = input("Appuyez sur la touche Retour pour continuer...")
+
+
+print("TensorFlow -- Affichage d'une image")
+pause()
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 

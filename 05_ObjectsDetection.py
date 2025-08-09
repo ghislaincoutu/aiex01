@@ -1,13 +1,15 @@
-# TensorFlow -- Détection d'objets à partir d'une image
+import os
+
+os.system("clear")
+
 
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
-import os
-os.system("clear")
-pause89 = "Appuyez sur la touche Retour pour continuer..."
+
+print("TensorFlow -- Détection d'objets à partir d'une image")
+pause()
 print("Importation des dépendances")
-#input(pause89)
 pause()
 # For running inference on the TF-Hub module.
 import tensorflow as tf
@@ -30,13 +32,13 @@ from PIL import ImageOps
 # For measuring the inference time.
 import time
 
-# Print Tensorflow version
 print(tf.__version__)
+
 # Check available GPU devices.
 print("The following GPU devices are available: %s" % tf.test.gpu_device_name())
 
 print("Définition des fonctions pour importer et traiter les images")
-input(pause89)
+pause()
 
 
 def display_image(image):
@@ -141,12 +143,12 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
 
 
 print("Téléchargemet de l'image à traiter")
-input(pause89)
+pause()
 image_url = "https://farm6.staticflickr.com/5314/5887463535_a88f862a81_o.jpg"
 downloaded_image_path = download_and_resize_image(image_url, 1280, 856, True)
 
 print("Activation des modules de détection d'objets")
-input(pause89)
+pause()
 
 module_handle = (
     "https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1"
@@ -178,6 +180,6 @@ def run_detector(detector, path):
     display_image(image_with_boxes)
 
 
-print("Exécutaion de la détection d'objets")
-input(pause89)
+print("Exécution de la détection d'objets")
+pause()
 run_detector(detector, downloaded_image_path)

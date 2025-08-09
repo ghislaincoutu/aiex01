@@ -1,17 +1,19 @@
-# TensorFlow -- Traitement d'un jeu de données MNIST
+import os
+
+os.system("clear")
 
 
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
 
-import os
-import datetime
-
-os.system("clear")
+print("TensorFlow -- Traitement d'un jeu de données MNIST")
+pause()
 
 print("Configuration de TensorFlow")
 pause()
+
+import datetime
 import tensorflow as tf
 
 print(f"TensorFlow version: {tf.__version__}")

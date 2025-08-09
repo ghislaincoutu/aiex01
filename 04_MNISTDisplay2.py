@@ -1,16 +1,17 @@
-# TensorFlow -- Traitement d'un jeu de données Fashion MNIST
+import os
+
+os.system("clear")
 
 
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
 
-import os
-
-os.system("clear")
-
+print("TensorFlow -- Traitement d'un jeu de données Fashion MNIST")
+pause()
 print("Configuration de TensorFlow")
 pause()
+
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
