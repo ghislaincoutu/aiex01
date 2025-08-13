@@ -27,7 +27,7 @@ def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
 
-print("TensorFlow -- Détection d'objets à partir d'une image")
+print("TensorFlow -- Détection d’objets à partir d’une image")
 print(f"TensorFlow version: {tf.__version__}")
 print("The following GPU devices are available: %s" % tf.test.gpu_device_name())
 
@@ -60,7 +60,7 @@ def download_and_resize_image(url, new_width=256, new_height=256, display=False)
 def draw_bounding_box_on_image(
     image, ymin, xmin, ymax, xmax, color, font, thickness=4, display_str_list=()
 ):
-    """Adds a bounding box to an image."""
+    # Adds a bounding box to an image.
     draw = ImageDraw.Draw(image)
     im_width, im_height = image.size
     (left, right, top, bottom) = (
@@ -109,7 +109,7 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
     # Overlay labeled boxes on an image with formatted scores and label names.
     colors = list(ImageColor.colormap.values())
     try:
-        font = ImageFont.truetype("/var/aiex01/fonts//LiberationSans-Regular.ttf", 25)
+        font = ImageFont.truetype("/var/aiex01/fonts/LiberationSans-Regular.ttf", 25)
     except IOError:
         print("Font not found, using default font.")
         font = ImageFont.load_default()
@@ -135,7 +135,7 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
     return image
 
 
-print("\nTéléchargemet de l'image à traiter")
+print("\nTéléchargemet de l’image à traiter")
 pause()
 
 
@@ -158,7 +158,7 @@ image_url = download_image("02")
 downloaded_image_path = download_and_resize_image(image_url, 1280, 800, True)
 
 
-print("\nActivation des modules de détection d'objets")
+print("\nActivation des modules de détection d’objets")
 pause()
 
 module_handle = ("https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1")
@@ -190,6 +190,6 @@ def run_detector(detector, path):
     display_image(image_with_boxes)
 
 
-print("\nExécution de la détection d'objets")
+print("\nExécution de la détection d’objets")
 pause()
 run_detector(detector, downloaded_image_path)

@@ -11,7 +11,7 @@ def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
 
-print("TensorFlow -- Traitement d'un jeu de données Fashion MNIST")
+print("TensorFlow -- Traitement dun jeu de données Fashion MNIST")
 print(f"TensorFlow version: {tf.__version__}")
 pause()
 
