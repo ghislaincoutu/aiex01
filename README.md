@@ -54,15 +54,15 @@ python3 -c "import tensorflow as tf; print(f'TensorFlow version: {tf.__version__
 python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 ```
 
-# Installation et utilisation du module TensorBoard
-## Installation de TensorBoard
+## Installation et utilisation du module TensorBoard
+### Installation de TensorBoard
 ```sh
 source /var/aiex01/ai01/bin/activate
 pip install --upgrade pip
 pip install tensorboard
 ```
 
-## Activation de TensorBoard
+### Activation de TensorBoard
 Il faut au préalable générer les journaux dans le sous-répertoire `/var/aiex01/logs/fit` pour pouvoir obtenir un visuel.
 ```sh
 tensorboard --logdir=logs/fit

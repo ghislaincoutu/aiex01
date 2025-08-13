@@ -6,13 +6,13 @@
 # Open Images Dataset V7 and Extensions
 # https://storage.googleapis.com/openimages/web/index.html
 
+import os
+import time
+import tempfile
 import tensorflow as tf
 import tensorflow_hub as hub
 import matplotlib.pyplot as plt
 import numpy as np
-import time
-import tempfile
-import os
 from PIL import ImageOps
 from PIL import ImageFont
 from PIL import ImageDraw

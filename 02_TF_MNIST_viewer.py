@@ -1,9 +1,9 @@
 # TensorFlow -- Visionneuse de données MNIST de base
 
+import os
 from tensorflow.keras.datasets import mnist
 import matplotlib.pyplot as plt
 import numpy as np
-import os
 os.system("clear")
 
 

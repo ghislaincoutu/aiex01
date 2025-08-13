@@ -1,9 +1,9 @@
 # TensorFlow -- Traitement d'un jeu de données Fashion MNIST
 
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-import os
 os.system("clear")
 
 

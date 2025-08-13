@@ -1,8 +1,8 @@
 # TensorFlow -- Téléchargement et affichage d'une image
 
+import os
 import tensorflow as tf
 import matplotlib.pyplot as plt
-import os
 os.system("clear")
 
 

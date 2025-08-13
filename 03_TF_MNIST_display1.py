@@ -1,8 +1,8 @@
 # TensorFlow -- Traitement d'un jeu de données MNIST
 
-import tensorflow as tf
-import datetime
 import os
+import datetime
+import tensorflow as tf
 os.system("clear")
 
 
