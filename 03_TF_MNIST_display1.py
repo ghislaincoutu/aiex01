@@ -69,8 +69,8 @@ def tensorboard_function():
         callbacks=[tensorboard_callback],
     )
 
-
 tensorboard_function()
 
-# À la fin du script, exécuter la commande suivante :
-# tensorboard --logdir=logs/fit
+print("\nExécuter la commande suivante pour activer TensorBoard :")
+print ("tensorboard --logdir=logs/fit")
+
