@@ -4,10 +4,7 @@ aiex01 — Expérimentations d’applications d’intelligence artificielle
 ## Dépôt Git
 https://github.com/ghislaincoutu/aiex01
 
-## Installation de TensorFlow
-Procédure d’installation de l’application, selon la documentation officielle de TensorFlow.
-
-### Installation des modules Python3
+## Installation des modules Python3
 ```sh
 sudo apt-get update
 sudo apt-get install python3
@@ -16,7 +13,7 @@ sudo apt-get install python3-venv
 sudo apt-get install python3-tk
 ```
 
-### Création d’un environnement virtuel Python3
+## Création d’un environnement virtuel Python3
 ```sh
 cd /var
 sudo mkdir aiex01
@@ -33,7 +30,7 @@ cd /var/aiex01
 source ./activate_venv.sh
 ```
 
-### Installation de TensorFlow et de ses dépendances
+## Installation de TensorFlow et de ses dépendances
 ```sh
 source /var/aiex01/ai01/bin/activate
 pip install --upgrade pip
