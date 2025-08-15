@@ -22,25 +22,21 @@ from six import BytesIO
 from six.moves.urllib.request import urlopen
 os.system("clear")
 
-
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
-
 print("TensorFlow -- Détection d’objets à partir d’une image")
-print(f"TensorFlow version: {tf.__version__}")
-print("The following GPU devices are available: %s" % tf.test.gpu_device_name())
+print(f"Version TensorFlow : {tf.__version__}")
+pause()
 
 print("\nDéfinition des fonctions pour importer et traiter les images")
 pause()
-
 
 def display_image(image):
     fig = plt.figure(figsize=(20, 15))
     plt.grid(False)
     plt.imshow(image)
     plt.show()
-
 
 def download_and_resize_image(url, new_width=256, new_height=256, display=False):
     _, filename = tempfile.mkstemp(suffix=".jpg")
@@ -55,7 +51,6 @@ def download_and_resize_image(url, new_width=256, new_height=256, display=False)
     if display:
         display_image(pil_image)
     return filename
-
 
 def draw_bounding_box_on_image(
     image, ymin, xmin, ymax, xmax, color, font, thickness=4, display_str_list=()
@@ -104,7 +99,6 @@ def draw_bounding_box_on_image(
         )
         text_bottom -= text_height - 2 * margin
 
-
 def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
     # Overlay labeled boxes on an image with formatted scores and label names.
     colors = list(ImageColor.colormap.values())
@@ -134,10 +128,8 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
             np.copyto(image, np.array(image_pil))
     return image
 
-
 print("\nTéléchargemet de l’image à traiter")
 pause()
-
 
 def download_image(image33):
     match image33:
@@ -153,10 +145,8 @@ def download_image(image33):
         case _:
             print(f"Sélection incorrecte: {image33}")
 
-
 image_url = download_image("02")
 downloaded_image_path = download_and_resize_image(image_url, 1280, 800, True)
-
 
 print("\nActivation des modules de détection d’objets")
 pause()
@@ -164,12 +154,10 @@ pause()
 module_handle = ("https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1")
 detector = hub.load(module_handle).signatures["default"]
 
-
 def load_img(path):
     img = tf.io.read_file(path)
     img = tf.image.decode_jpeg(img, channels=3)
     return img
-
 
 def run_detector(detector, path):
     img = load_img(path)
@@ -188,7 +176,6 @@ def run_detector(detector, path):
         result["detection_scores"],
     )
     display_image(image_with_boxes)
-
 
 print("\nExécution de la détection d’objets")
 pause()
