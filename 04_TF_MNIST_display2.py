@@ -6,15 +6,12 @@ import numpy as np
 import tensorflow as tf
 os.system("clear")
 
-
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
-
 print("TensorFlow -- Traitement dun jeu de données Fashion MNIST")
-print(f"TensorFlow version: {tf.__version__}")
+print(f"Version TensorFlow : {tf.__version__}")
 pause()
-
 
 print("\nChargement d’un jeu de données Fashion MNIST")
 pause()
@@ -88,7 +85,6 @@ predictions[0]
 np.argmax(predictions[0])
 test_labels[0]
 
-
 def plot_image(i, predictions_array, true_label, img):
     true_label, img = true_label[i], img[i]
     plt.grid(False)
@@ -109,7 +105,6 @@ def plot_image(i, predictions_array, true_label, img):
         color=color,
     )
 
-
 def plot_value_array(i, predictions_array, true_label):
     true_label = true_label[i]
     plt.grid(False)
@@ -120,7 +115,6 @@ def plot_value_array(i, predictions_array, true_label):
     predicted_label = np.argmax(predictions_array)
     thisplot[predicted_label].set_color("red")
     thisplot[true_label].set_color("blue")
-
 
 i = 0
 plt.figure(figsize=(6, 3))

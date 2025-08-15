@@ -6,15 +6,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 os.system("clear")
 
-
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
-
 print("TensorFlow -- Visionneuse de données MNIST de base")
-pause()
-
-print("\nImportation des modules")
+print(f"Version TensorFlow : {tf.__version__}")
 pause()
 
 print("\nChargement de la base de données MNIST")

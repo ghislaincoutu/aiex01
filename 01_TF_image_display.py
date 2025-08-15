@@ -5,12 +5,11 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 os.system("clear")
 
-
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
-
 print("TensorFlow -- Téléchargement et affichage d’une image")
+print(f"Version TensorFlow : {tf.__version__}")
 pause()
 
 print("\nTéléchargement de l’image")

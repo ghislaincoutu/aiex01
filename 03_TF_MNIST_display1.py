@@ -5,18 +5,12 @@ import datetime
 import tensorflow as tf
 os.system("clear")
 
-
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
-
 print("TensorFlow -- Traitement d'un jeu de données MNIST")
+print(f"Version TensorFlow : {tf.__version__}")
 pause()
-
-print("\nImportation des modules")
-pause()
-
-print(f"TensorFlow version: {tf.__version__}")
 
 print("\nChargement d’un jeu de données MNIST")
 pause()
@@ -47,7 +41,6 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test, verbose=2)
 probability_model = tf.keras.Sequential([model, tf.keras.layers.Softmax()])
 probability_model(x_test[:5])
-
 
 # Test d’utilisation du module TensorBoard
 def tensorboard_function():
