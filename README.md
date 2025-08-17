@@ -39,9 +39,9 @@ pip install tensorflow-hub
 pip install tensorflow-datasets
 pip install matplotlib
 pip install opencv-python
+pip install opencv-python-headless
 ```
 Dans le cas d’une installation de TensorFlow sur une machine virtuelle VirtualBox pour Windows, il faut installer le paquet `tensorflow-cpu` plutôt que `tensorflow`. Cependant, ça ne fonctionne pas si on installe `tensorflow-cpu` avec `tensorflow-hub`.
-
 ```sh
 pip uninstall tensorflow
 pip install tensorflow-cpu
