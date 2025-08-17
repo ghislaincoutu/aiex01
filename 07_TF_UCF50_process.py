@@ -1,8 +1,20 @@
+# TensorFlow -- Définition du jeu de données de la banque de vidéos UCF50
+
+import os
 import tensorflow as tf
 import numpy as np
-import os
 from glob import glob
 from PIL import Image
+os.system("clear")
+
+def pause():
+    programPause = input("Appuyez sur la touche Retour pour continuer...")
+
+print("TensorFlow -- Définition du jeu de données de la banque de vidéos UCF50")
+pause()
+
+def pause():
+    programPause = input("Appuyez sur la touche Retour pour continuer...")
 
 def load_video_tensor(frame_dir, num_frames=30, img_size=(224, 224)):
     frame_paths = sorted(glob(os.path.join(frame_dir, '*.jpg')))[:num_frames]
@@ -35,6 +47,5 @@ def build_ucf50_dataset(frames_root, num_frames=30):
 
     return tf.data.Dataset.from_tensor_slices((data, labels))
 
-#dataset = build_ucf50_dataset("/media/disk01/medias/UCF50_frames", num_frames=30)
-dataset = build_ucf50_dataset("/media/disk01/medias/UCF50_frames", num_frames=12)
+dataset = build_ucf50_dataset("/media/disk01/medias/UCF50_frames", num_frames=30)
 dataset = dataset.shuffle(100).batch(8).prefetch(tf.data.AUTOTUNE)

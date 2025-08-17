@@ -1,4 +1,4 @@
-# Conversion des vidéos UCF50 en séries d'images clés
+# TensorFlow -- Conversion des vidéos UCF50 en séries d'images-clés de format JPEG
 
 import os
 import cv2
@@ -7,10 +7,10 @@ os.system("clear")
 def pause():
     programPause = input("Appuyez sur la touche Retour pour continuer...")
 
-print("Conversion des vidéos UCF50 en images-clés de format JPEG")
+print("TensorFlow -- Conversion des vidéos UCF50 en images-clés de format JPEG")
 pause()
 
-ucf50_dir = "/media/disk01/medias/UCF50"
+ucf50_dir = "/media/disk01/medias/UCF50_limited"
 output_dir = "/media/disk01/medias/UCF50_frames"
 frame_interval = 5
 
