@@ -13,6 +13,11 @@ sudo apt-get install python3-venv
 sudo apt-get install python3-tk
 ```
 
+## Installation de FFmpeg
+```sh
+sudo apt-get install ffmpeg
+```
+
 ## Création d’un environnement virtuel Python3
 ```sh
 cd /media/disk01
