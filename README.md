@@ -32,7 +32,7 @@ Saisir la commande `deactivate` pour sortir de l’environnement virtuel Python3
 Commande pour activer l’environnemnet virtuel Python3 à partir du script `activate_venv.sh`.
 ```sh
 cd /media/disk01/aiex01
-source ./activate_venv.sh
+source ./sh_activate_venv.sh
 ```
 
 ## Installation de TensorFlow et de ses dépendances
