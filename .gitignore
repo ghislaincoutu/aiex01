@@ -1,3 +1,8 @@
 ai01/
 logs/
+dataset/
+runs/
+
 00_temporary.py
+*.gif
+*.cache
