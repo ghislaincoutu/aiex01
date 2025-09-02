@@ -134,19 +134,16 @@ pause()
 def download_image(image33):
     match image33:
         case "01":
-            url33 = "https://farm6.staticflickr.com/5314/5887463535_a88f862a81_o.jpg"
+            url33 = "http://192.168.56.154/medias50/constructionsite01.png"
             return url33
         case "02":
-            url33 = "https://farm6.staticflickr.com/3694/19007218479_03f8493049_o.jpg"
-            return url33
-        case "03":
-            url33 = "http://localhost/dev01/medias/image001.jpg"
+            url33 = "http://192.168.56.154/medias50/geoshapes01.png"
             return url33
         case _:
             print(f"Sélection incorrecte: {image33}")
 
 image_url = download_image("02")
-downloaded_image_path = download_and_resize_image(image_url, 1280, 800, True)
+downloaded_image_path = download_and_resize_image(image_url, 960, 540, True)
 
 print("\nActivation des modules de détection d’objets")
 pause()
